@@ -17,7 +17,7 @@ class UserController extends Controller
      */
     public function postsWithComments(User $user): AnonymousResourceCollection
     {
-        $posts = $user->posts()->with('comments')->get();
+        $posts = $user->posts()->get();
 
         return PostResource::collection($posts);
     }
